@@ -1,6 +1,8 @@
-import Masonry from './Masonry';
+import React from "react";
+import Masonry from "../../Reactbit/UI/Masonry";
 
-const items = [
+export default function Full_Grid() {
+  const items = [
     {
       id: "1",
       img: "https://picsum.photos/id/1015/600/900?grayscale",
@@ -19,17 +21,21 @@ const items = [
       url: "https://example.com/three",
       height: 600,
     },
-    // ... more items
-];
+  ];
 
-<Masonry
-  items={items}
-  ease="power3.out"
-  duration={0.6}
-  stagger={0.05}
-  animateFrom="bottom"
-  scaleOnHover={true}
-  hoverScale={0.95}
-  blurToFocus={true}
-  colorShiftOnHover={false}
-/>
+  return (
+    <div className="p-8">
+      <Masonry
+        items={items}
+        ease="power3.out"
+        duration={0.6}
+        stagger={0.05}
+        animateFrom="bottom"
+        scaleOnHover={true}
+        hoverScale={0.95}
+        blurToFocus={true}
+        colorShiftOnHover={false}
+      />
+    </div>
+  );
+}

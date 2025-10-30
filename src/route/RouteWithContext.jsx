@@ -6,7 +6,7 @@ import Navbar from "../Component/component_context/Navbar";
 import { UserProvider } from "../Component/context/UserContext1";
 import Card_tittle from '../Component/Pages/Card_tittle';
 import Grid_card from "../Component/Pages/Grid_card";
-// import Mokshsworld from "../Component/Pages/Mokshsworld";
+import Masonry from "../Reactbit/UI/Masonry";
 
 
 export default function RouteWithContext() {
@@ -20,7 +20,7 @@ export default function RouteWithContext() {
                     <Route path="/profilePage" element={<ProfileDetails />} />
                     <Route path="/card" element={<Card_tittle />} />
                     <Route path="/grid" element={< Grid_card/>} />
-                    {/* <Route path="/world" element={< Mokshsworld/>} /> */}
+                    <Route path="/world" element={< Masonry/>} />
 
                     
                 </Routes>
