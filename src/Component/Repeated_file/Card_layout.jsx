@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { HeartIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from "react-router-dom";
 
 export default function Card_layout() {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
+
+
+  const navigate = useNavigate();
+
 
   const ringData = [
     {
@@ -82,10 +88,6 @@ export default function Card_layout() {
   ];
 
   // Add to cart
-  const handleBuyNow = (item) => {
-    setCart((prev) => [...prev, item]);
-    alert(`${item.name} added to cart 🛒`);
-  };
 
   // Wishlist toggle
   const toggleWishlist = (item) => {
@@ -137,12 +139,12 @@ export default function Card_layout() {
                       />
                     </button>
 
-                    <button
-                      onClick={() => handleBuyNow(item)}
-                      className="p-2 rounded-full bg-white/70 backdrop-blur-md shadow-md hover:scale-110 transition-all"
-                    >
-                      <ShoppingBagIcon className="w-6 h-6 text-amber-600 hover:text-amber-700" />
-                    </button>
+                <button
+  onClick={() => navigate(`/detail/${item.id}`)}
+  className="flex items-center bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-5 py-2.5 rounded-xl font-semibold hover:from-yellow-600 hover:to-amber-700 shadow-lg hover:shadow-amber-300/50 transform hover:scale-105 active:scale-95 transition-all"
+>
+  Buy Now
+</button>
                   </div>
 
                   {/* Images */}

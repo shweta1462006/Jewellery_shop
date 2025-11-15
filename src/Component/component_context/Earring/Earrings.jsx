@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import EarringsDeatil from "./Earring.js";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function Earrings() {
   const [selectedCategory, setSelectedCategory] = useState("Gold");
+const navigate = useNavigate();
 
   const filteredRings = EarringsDeatil.filter(
     (item) => item.category === selectedCategory
@@ -94,16 +96,13 @@ export default function Earrings() {
                   {product.price}
                 </p>
 
-                <button
-                  disabled={product.isAvailable !== "true"}
-                  className={`mt-6 w-full rounded-lg py-3 text-sm font-bold transition-all ${
-                    product.isAvailable === "true"
-                      ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-white"
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  }`}
-                >
-                  {product.isAvailable === "true" ? "Buy Now" : "Out of Stock"}
-                </button>
+              <button
+  onClick={() => navigate(`/detail/${item.id}`)}
+  className="flex items-center bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-5 py-2.5 rounded-xl font-semibold hover:from-yellow-600 hover:to-amber-700 shadow-lg hover:shadow-amber-300/50 transform hover:scale-105 active:scale-95 transition-all"
+>
+  Buy Now
+</button>
+
               </div>
             </div>
           ))}

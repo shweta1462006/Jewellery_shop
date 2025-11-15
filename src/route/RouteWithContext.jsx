@@ -12,6 +12,9 @@ import Rings from "../Component/component_context/Ring/Rings.jsx";
 import Bangles from "../Component/component_context/Ring/Bangle/Bangles.jsx";
 import Necklaces from "../Component/component_context/Necklace/Necklaces.jsx";
 import Earrings from "../Component/component_context/Earring/Earrings.jsx";
+import Collection from "../Component/component_context/Collection/Collection.jsx";
+import Useparams from "../Component/Destination_page/useparams.jsx";
+import ShowDetail from "../Component/Destination_page/ShowDetail.jsx";
 
 
 
@@ -30,8 +33,9 @@ export default function RouteWithContext() {
 <Route path="/rings" element={<Rings />} />
 <Route path="/necklaces" element={<Necklaces />} />
 <Route path="/earrings" element={<Earrings />} />
-
-
+<Route path="/Collection" element={<Collection />} />
+  <Route path="/detail/:id" element={<ShowDetail />} />
+  {/* <Route path="/show" element={<ShowDetail />} /> */}
 
 
 

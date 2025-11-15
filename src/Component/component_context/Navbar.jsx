@@ -79,10 +79,10 @@ export default function Navbar() {
         {/* Right Section */}
         <div className="hidden md:flex items-center space-x-6">
           <NavLink
-            to="/pricing"
+            to="/Collection"
             className="text-gray-700 font-medium hover:text-amber-600 transition"
           >
-            Pricing
+         Collection
           </NavLink>
 
           <NavLink
@@ -181,8 +181,8 @@ export default function Navbar() {
           <NavLink to="/earrings" className="block text-gray-700 font-medium">
             Earrings
           </NavLink>
-          <NavLink to="/pricing" className="block text-gray-700 font-medium">
-            Pricing
+          <NavLink to="/Collection" className="block text-gray-700 font-medium">
+           Collection
           </NavLink>
           <NavLink to="/faqs" className="block text-gray-700 font-medium">
             FAQs
