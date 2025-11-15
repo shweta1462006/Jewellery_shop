@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Card_tittle from "../Pages/Card_tittle";
 import Grid_card from "../Pages/Grid_card";
 import Mokshsworld from "../Pages/Mokshsworld";
-import Masonry from "../../Reactbit/UI/Masonry";
+import MVPage from "../Pages/MVPage";
+// import Masonry from "../../Reactbit/UI/Masonry";
 const slides = [
   {
     id: 1,
@@ -30,6 +31,7 @@ const slides = [
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -109,13 +111,20 @@ const Hero = () => {
       </section>
 
       {/* Moved Card_tittle inside the return */}
-      <Card_tittle />
+      {/* <Card_tittle /> */}
       <Grid_card/>
       {/* <Card_tittle card_tittle1="Mokashs World" card_tittle2="A campanion of Every ocasion"/> */}
       <Mokshsworld/>
-      <Masonry/>
+    {/* <MVPage/> */}
+
     </>
   );
 };
 
 export default Hero;
+
+
+
+
+
+

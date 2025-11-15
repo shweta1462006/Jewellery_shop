@@ -19,7 +19,7 @@ export default function Mokshsworld() {
           <Card_tittle
             card_tittle1="Mokash's Collection"
             card_tittle2="Celebrate the sparkle of every moment..."
-            css1="text-center w-full font-merienda space-y-3"
+            css1="text-center w-full font-merienda space-y-3  "
             css2="text-[42px] md:text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 drop-shadow-[0_2px_6px_rgba(255,215,0,0.4)]"
             css3="text-[20px] md:text-[24px] text-slate-600 italic tracking-wide"
           />
@@ -49,7 +49,7 @@ export default function Mokshsworld() {
             randomRotation={true}
             sensitivity={180}
             sendToBackOnClick={false}
-            cardDimensions={{ width: 400, height: 600 }}
+            cardDimensions={{ width: 400, height: 500 }}
             cardsData={images}
           />
         </div>
