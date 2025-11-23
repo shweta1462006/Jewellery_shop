@@ -1,59 +1,60 @@
 import React, { useState } from "react";
 
-export default function ShowDetail({ object1 }) {
-
-  const [mainImage, setMainImage] = useState(object1.imageSrc);
+export default function ProductCard({ item }) {
+  const [selectedImage, setSelectedImage] = useState(item.imageSrc);
 
   return (
-    <div>
-      <section className="py-8 bg-white md:py-16 antialiased">
-        <div className="max-w-screen-xl px-4 mx-auto">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+    <div className="bg-white p-5 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 w-full max-w-sm mx-auto">
 
-            {/* Main Image */}
-            <div className="max-w-md mx-auto">
+      {/* Product Image */}
+      <img
+        src={selectedImage}
+        alt={item.name}
+        className="w-full h-64 object-cover rounded-lg cursor-pointer"
+      />
+
+      {/* Thumbnail Images */}
+      <div className="flex gap-3 mt-3 justify-center">
+        {[item.imageSrc, item.hoverimageSrc, item.sideView, item.backView].map(
+          (img, idx) =>
+            img && (
               <img
-                className="w-full h-[400px] rounded-md"
-                src={mainImage}
-                alt="main"
+                key={idx}
+                src={img}
+                alt="thumb"
+                onClick={() => setSelectedImage(img)}
+                className="w-16 h-16 object-cover rounded-md border cursor-pointer hover:scale-105 shadow-sm transition"
               />
+            )
+        )}
+      </div>
 
-              <div className="flex gap-4 justify-center mt-4">
-                <img
-                  onClick={() => setMainImage(object1.imageSrc)}
-                  src={object1.imageSrc}
-                  className="w-24 h-24 border rounded-lg cursor-pointer hover:scale-105 transition"
-                />
+      {/* Product Info */}
+      <div className="mt-4">
+        <h2 className="text-lg font-semibold">{item.name}</h2>
 
-                <img
-                  onClick={() => setMainImage(object1.miniImg2)}
-                  src={object1.miniImg2}
-                  className="w-24 h-24 border rounded-lg cursor-pointer hover:scale-105 transition"
-                />
-              </div>
-            </div>
+        <p className="text-yellow-500 text-sm font-medium">
+          ⭐ {item.rating} ({item.reviews} reviews)
+        </p>
 
-            {/* Details */}
-            <div className="mt-6">
-              <h1 className="text-2xl font-semibold">{object1.name}</h1>
+        <p className="text-xl font-bold text-gray-800 mt-2">
+          ₹ {item.price}
+        </p>
 
-              <div className="mt-4 flex items-center gap-4">
-                <p className="text-3xl font-bold">{object1.price}</p>
+        <p className="text-gray-600 text-sm mt-1">
+          Category: {item.category}
+        </p>
+      </div>
 
-                <div className="flex items-center gap-2">
-                  ⭐⭐⭐⭐
-                  <p className="text-sm">{object1.rating}</p>
-                </div>
-              </div>
-
-              <hr className="my-6" />
-
-              <p className="text-gray-600">{object1.longDescription}</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      {/* Buttons */}
+      <div className="flex gap-4 mt-4">
+        <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-semibold">
+          Add to Cart
+        </button>
+        <button className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-sm font-semibold">
+          Buy Now
+        </button>
+      </div>
     </div>
   );
 }

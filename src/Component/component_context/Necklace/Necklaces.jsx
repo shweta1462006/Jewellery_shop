@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import NecklacesDetail from "./Necklace.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Row1 from "../../Repeated_file/Row1";   // <-- IMPORT HERE
+import { useCart } from "../CardContext";
+
 
 export default function Necklaces() {
   const [selectedCategory, setSelectedCategory] = useState("Gold");
+
+    const { addToCart } = useCart();
+  const navigate = useNavigate();
+
 
   const filteredRings = NecklacesDetail.filter(
     (item) => item.category === selectedCategory
@@ -17,7 +23,7 @@ export default function Necklaces() {
       
       {/* Category Tabs */}
       <div className="flex justify-center mb-12 flex-wrap gap-4">
-        {["Gold", "Diamond", "Engagement"].map((category) => (
+        {["Gold", "Diamond", "Silver"].map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
@@ -97,16 +103,25 @@ export default function Necklaces() {
                   >
                     {product.price}
                   </p>
+                     <button
+                    onClick={() => addToCart(product)}
+                    className="mt-3 w-full rounded-lg py-2 text-sm font-bold border border-[#D97706] text-[#D97706] hover:bg-[#D97706] hover:text-white transition-all"
+                  >
+                    Add to Cart 🛒
+                  </button>
+
 
                   <button
-                    disabled={product.isAvailable !== "true"}
-                    className={`mt-6 w-full rounded-lg py-3 text-sm font-bold transition-all ${
-                      product.isAvailable === "true"
+                    onClick={() =>
+                      product.isAvailable ? navigate(`/useparams/${product.id}`) : null
+                    }
+                    className={`mt-3 w-full rounded-lg py-3 text-sm font-bold transition-all ${
+                      product.isAvailable
                         ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-white"
                         : "bg-gray-300 text-gray-500 cursor-not-allowed"
                     }`}
                   >
-                    {product.isAvailable === "true" ? "Buy Now" : "Out of Stock"}
+                    {product.isAvailable ? "Buy Now" : "Out of Stock"}
                   </button>
                 </div>
               </div>

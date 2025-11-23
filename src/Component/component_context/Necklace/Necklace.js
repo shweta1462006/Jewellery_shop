@@ -1,22 +1,77 @@
-// ---------------- EXTRA IMAGES (19–30 Normal Images) ----------------
-const extraImages = [
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/501819FJCAA00_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/507215VDZABA09_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/505218FVJAA02_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/510215FCVAA00_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/500918FJHAA09_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/502315FAJAA00_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D2C2FUEAA02_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D3I1FNKAA02_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D4C2FNVAA02_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/510512FSWAA02_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/51A1A1FBDAA00_1.jpg",
-  "https://staticimg.tanishq.co.in/Tanishq/Catalog/51V2E2GNYAA09_1.jpg",
-];
+import ng1 from "../../../assets/Images/ng1.webp"
+import ngh1 from "../../../assets/Images/ngh1.webp"
+import ng2 from "../../../assets/Images/ng2.webp"
+import ngh2 from "../../../assets/Images/ngh2.webp"
+import ng3 from "../../../assets/Images/ng3.webp"
+import ngh3 from "../../../assets/Images/ngh3.webp"
+import ng4 from "../../../assets/Images/ng4.webp"
+import ngh4 from "../../../assets/Images/ngh4.webp"
+import ng5 from "../../../assets/Images/ng5.webp"
+import ngh5 from "../../../assets/Images/ngh5.webp"
+import ng6 from "../../../assets/Images/ng6.webp"
+import ngh6 from "../../../assets/Images/ngh6.webp"
+import ng7 from "../../../assets/Images/ng7.webp"
+import ngh7 from "../../../assets/Images/ngh7.webp"
+import ng8 from "../../../assets/Images/ng8.webp"
+import ngh8 from "../../../assets/Images/ngh8.webp"
+import ng9 from "../../../assets/Images/ng9.webp"
+// import ngh9 from "../../../assets/Images/ngh9.webp"
+import ng10 from "../../../assets/Images/ng10.webp"
+import ngh10 from "../../../assets/Images/ngh10.webp"
 
 
-// ---------------- MAIN RING DATA (1–18) ----------------
+
+
+
+import nd1 from "../../../assets/Images/nd1.jpg"
+import ndh1 from "../../../assets/Images/ndh1.jpg"
+import nd2 from "../../../assets/Images/nd2.webp"
+import ndh2 from "../../../assets/Images/ndh2.webp"
+import nd3 from "../../../assets/Images/nd3.webp"
+import ndh3 from "../../../assets/Images/ndh3.webp"
+import nd4 from "../../../assets/Images/nd4.webp"
+import ndh4 from "../../../assets/Images/ndh4.webp"
+import nd5 from "../../../assets/Images/nd5.webp"
+import ndh5 from "../../../assets/Images/ndh5.webp"
+import nd6 from "../../../assets/Images/nd6.webp"
+import ndh6 from "../../../assets/Images/ndh6.webp"
+import nd7 from "../../../assets/Images/nd7.webp"
+import ndh7 from "../../../assets/Images/ndh7.webp"
+import nd8 from "../../../assets/Images/nd8.webp"
+import ndh8 from "../../../assets/Images/ndh8.jpg"
+import nd9 from "../../../assets/Images/nd9.webp"
+import ndh9 from "../../../assets/Images/ndh9.webp"
+
+
+
+import bp1 from "../../../assets/Images/bp1.webp"
+import bph1 from "../../../assets/Images/bph1.webp"
+import bp2 from "../../../assets/Images/bp2.webp"
+import bph2 from "../../../assets/Images/bph2.webp"
+import bp3 from "../../../assets/Images/bp3.jpg"
+import bph3 from "../../../assets/Images/bph3.webp"
+import bp4 from "../../../assets/Images/bp4.webp"
+import bph4 from "../../../assets/Images/bph4.jpg"
+import bp5 from "../../../assets/Images/bp5.webp"
+import bph5 from "../../../assets/Images/bph5.webp"
+import bp6 from "../../../assets/Images/bp6.webp"
+import bph6 from "../../../assets/Images/bph6.webp"
+// import bp7 from "../../../assets/Images/bp7.webp"
+// import bph7 from "../../../assets/Images/bph7.webp"
+// import bp8 from "../../../assets/Images/bp8.webp"
+// import bph8 from "../../../assets/Images/bph8.webp"
+// import bp9 from "../../../assets/Images/bp9.webp"
+// import bph9 from "../../../assets/Images/bph9.webp"
+// import bp10 from "../../../assets/Images/bp10.jpg"
+// import bph10 from "../../../assets/Images/bph10.webp"
+
+
+
+
+
+
 const NecklacesDetail = [
+  // ========== GOLD (10) ==========
   {
     id: 1,
     name: "Classic Gold Ring",
@@ -24,17 +79,12 @@ const NecklacesDetail = [
     price: "₹45,000",
     rating: "4.7",
     duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Tanishq Gold Collection",
-
-    imageSrc:
-      "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw4686444e/images/hi-res/511003FBGAA00_2.jpg?sw=480&sh=480",
-
-    hoverimageSrc:
-      "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw4686444e/images/hi-res/511003FBGAA00_1.jpg?sw=480&sh=480",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Gold Collection",
+    imageSrc: ng1,
+    hoverimageSrc:ngh1,
   },
-
   {
     id: 2,
     name: "Royal Gold Ring",
@@ -42,17 +92,12 @@ const NecklacesDetail = [
     price: "₹52,000",
     rating: "4.6",
     duration: "Trending",
-    isDiscount: "true",
-    isAvailable: "true",
-    location: "Tanishq Exclusive",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/516061FFZAA00_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/516061FFZAA00_2.jpg",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Exclusive Gold",
+    imageSrc: ng2,
+    hoverimageSrc:ngh2,
   },
-
   {
     id: 3,
     name: "Traditional Gold Ring",
@@ -60,310 +105,351 @@ const NecklacesDetail = [
     price: "₹48,500",
     rating: "4.5",
     duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Tanishq Premium Gold",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D2PTFYXAA09_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D2PTFYXAA09_2.jpg",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Premium Gold",
+    imageSrc: ng3,
+    hoverimageSrc:ngh3,
   },
-
   {
     id: 4,
-    name: "Designer Gold Ring",
+    name: "Gold Stud Earrings",
     category: "Gold",
-    price: "₹56,000",
-    rating: "4.8",
-    duration: "Top Pick",
-    isDiscount: "true",
-    isAvailable: "true",
-    location: "Gold Designer",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2D1FBEAM80_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2D1FBEAM80_2.jpg",
-  },
-
-  {
-    id: 5,
-    name: "Floral Gold Ring",
-    category: "Gold",
-    price: "₹41,500",
+    price: "₹31,500",
     rating: "4.4",
     duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
+    isDiscount: false,
+    isAvailable: true,
     location: "Gold Essentials",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS3I1FJUAS85_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS3I1FJUAS85_2.jpg",
+    imageSrc: ng4,
+    hoverimageSrc:ngh4,
   },
-
   {
-    id: 6,
-    name: "Majestic Gold Ring",
+    id: 5,
+    name: "Elegant Gold Necklace",
     category: "Gold",
-    price: "₹59,000",
-    rating: "4.9",
-    duration: "Premium",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Gold Royal",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2A1FCRA951_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2A1FCRA951_2.jpg",
-  },
-
-  // ---------------- DIAMOND ----------------
-  {
-    id: 7,
-    name: "Elegant Diamond Ring",
-    category: "Diamond",
     price: "₹95,000",
     rating: "4.8",
-    duration: "Best Seller",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Diamond Collection",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D4I1FNLAA09_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D4I1FNLAA09_2.jpg",
+    duration: "Top Pick",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Gold Necklace Set",
+    imageSrc: ng5,
+    hoverimageSrc:ngh5,
   },
-
+  {
+    id: 6,
+    name: "Classic Gold Bracelet",
+    category: "Gold",
+    price: "₹62,000",
+    rating: "4.6",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Gold Bracelet",
+    imageSrc: ng6,
+    hoverimageSrc:ngh6,
+  },
+  {
+    id: 7,
+    name: "Gold Drop Earrings",
+    category: "Gold",
+    price: "₹36,000",
+    rating: "4.5",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Gold Earrings",
+    imageSrc: ng7,
+    hoverimageSrc:ngh7,
+  },
   {
     id: 8,
-    name: "Crown Diamond Ring",
+    name: "Royal Gold Necklace",
+    category: "Gold",
+    price: "₹1,35,000",
+    rating: "4.8",
+    duration: "Premium",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Wedding Gold Collection",
+    imageSrc: ng8,
+    hoverimageSrc:ngh8,},
+  {
+    id: 9,
+    name: "Gold Ring with Stone",
+    category: "Gold",
+    price: "₹58,000",
+    rating: "4.7",
+    duration: "Trending",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Precious Gold",
+    imageSrc: ng9,
+    hoverimageSrc:ng9,},
+  {
+    id: 10,
+    name: "Classic Gold Chain",
+    category: "Gold",
+    price: "₹72,000",
+    rating: "4.6",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Gold Collection",
+    imageSrc: ng10,
+    hoverimageSrc:ngh10,
+  },
+
+  // ========== DIAMOND (10) ==========
+  {
+    id: 11,
+    name: "Elegant Solitaire Ring",
     category: "Diamond",
     price: "₹1,20,000",
     rating: "4.9",
     duration: "Premium",
-    isDiscount: "true",
-    isAvailable: "true",
-    location: "Diamond Luxury",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D4B3FOUAA09_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D4B3FOUAA09_2.jpg",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Diamond Collection",
+    imageSrc: nd1,
+    hoverimageSrc:ndh1,
   },
-
-  {
-    id: 9,
-    name: "Princess Diamond Ring",
-    category: "Diamond",
-    price: "₹1,05,000",
-    rating: "4.8",
-    duration: "Top Pick",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Diamond Royale",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D2PTFYXAA09_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/50D2PTFYXAA09_2.jpg",
-  },
-
-  {
-    id: 10,
-    name: "Halo Diamond Ring",
-    category: "Diamond",
-    price: "₹98,000",
-    rating: "4.7",
-    duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Halo Collection",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2D1FBEAM80_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2D1FBEAM80_2.jpg",
-  },
-
-  {
-    id: 11,
-    name: "Rose Diamond Ring",
-    category: "Diamond",
-    price: "₹1,30,000",
-    rating: "4.9",
-    duration: "Trending",
-    isDiscount: "true",
-    isAvailable: "true",
-    location: "Diamond Rose",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS3I1FJUAS85_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS3I1FJUAS85_2.jpg",
-  },
-
+ 
   {
     id: 12,
-    name: "Dual Band Diamond Ring",
+    name: "Emerald Diamond Ring",
     category: "Diamond",
-    price: "₹1,15,000",
-    rating: "4.6",
-    duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Diamond Fashion",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2A1FCRA951_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/HLS2A1FCRA951_2.jpg",
-  },
-
-  // ---------------- ENGAGEMENT ----------------
-  {
-    id: 13,
-    name: "Promise Engagement Ring",
-    category: "Engagement",
-    price: "₹68,000",
-    rating: "4.8",
-    duration: "Trending",
-    isDiscount: "true",
-    isAvailable: "true",
-    location: "Engagement Collection",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/503619FCBABAP1_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/503619FCBABAP1_2.jpg",
-  },
-
-  {
-    id: 14,
-    name: "Classic Engagement Ring",
-    category: "Engagement",
-    price: "₹72,000",
-    rating: "4.7",
-    duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Tanishq Romance",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502920FVEAAA00_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502920FVEAAA00_2.jpg",
-  },
-
-  {
-    id: 15,
-    name: "Solitaire Engagement Ring",
-    category: "Engagement",
-    price: "₹1,40,000",
-    rating: "5.0",
-    duration: "Premium",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Solitaire Love",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502417FCVAGA02_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502417FCVAGA02_2.jpg",
-  },
-
-  {
-    id: 16,
-    name: "Heart Engagement Ring",
-    category: "Engagement",
-    price: "₹75,000",
+    price: "₹1,60,000",
     rating: "4.8",
     duration: "Top Pick",
-    isDiscount: "true",
-    isAvailable: "true",
-    location: "Love Bands",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502018FVBAAA02_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502018FVBAAA02_2.jpg",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Diamond Collection",
+    imageSrc: nd2,
+    hoverimageSrc:ndh2,
   },
-
+  {
+    id: 13,
+    name: "Rose Gold Halo Ring",
+    category: "Diamond",
+    price: "₹98,000",
+    rating: "4.6",
+    duration: "Trending",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Diamond Collection",
+    imageSrc: nd3,
+    hoverimageSrc:ndh4,},
+  {
+    id: 14,
+    name: "Diamond Necklace Set",
+    category: "Diamond",
+    price: "₹2,10,000",
+    rating: "5.0",
+    duration: "Premium",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Wedding Collection",
+    imageSrc: nd5,
+    hoverimageSrc:ndh4,
+  },
+  {
+    id: 15,
+    name: "Diamond Hoop Earrings",
+    category: "Diamond",
+    price: "₹65,000",
+    rating: "4.8",
+    duration: "Premium",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Diamond Essentials",
+    imageSrc: nd5,
+    hoverimageSrc:ndh5,
+  },
+  {
+    id: 16,
+    name: "Diamond Pendant Chain",
+    category: "Diamond",
+    price: "₹89,000",
+    rating: "4.7",
+    duration: "Trending",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Diamond Necklace",
+    imageSrc: nd6,
+    hoverimageSrc:ndh6,
+  },
   {
     id: 17,
-    name: "Couple Engagement Ring",
-    category: "Engagement",
-    price: "₹85,000",
-    rating: "4.9",
-    duration: "Trending",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Couple Rings",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502818FVBBAA09_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502818FVBBAA09_2.jpg",
-  },
-
+    name: "Diamond Drop Earrings",
+    category: "Diamond",
+    price: "₹75,000",
+    rating: "4.6",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Diamond Collection",
+    imageSrc: nd7,
+    hoverimageSrc:ndh7,},
   {
     id: 18,
-    name: "Diamond Band Engagement",
-    category: "Engagement",
-    price: "₹90,000",
-    rating: "4.7",
-    duration: "In Stock",
-    isDiscount: "false",
-    isAvailable: "true",
-    location: "Band Style",
-
-    imageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502418FCPAGA03_1.jpg",
-
-    hoverimageSrc:
-      "https://staticimg.tanishq.co.in/Tanishq/Catalog/502418FCPAGA03_2.jpg",
+    name: "Diamond Wedding Ring",
+    category: "Diamond",
+    price: "₹1,85,000",
+    rating: "4.9",
+    duration: "Premium",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Wedding Diamond",
+    imageSrc: nd8,
+    hoverimageSrc:ndh8,
   },
+  {
+    id: 19,
+    name: "Diamond Bracelet",
+    category: "Diamond",
+    price: "₹1,10,000",
+    rating: "4.8",
+    duration: "Top Pick",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Diamond Bracelet",
+    imageSrc: nd9,
+    hoverimageSrc:ndh9,
+  },
+
+  // ========== SILVER (10) ==========
+  {
+    id: 21,
+    name: "Silver Classic Ring",
+    category: "Silver",
+    price: "₹8,500",
+    rating: "4.4",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Silver Collection",
+    imageSrc: bp1,
+    hoverimageSrc:bph1,
+  },
+  {
+    id: 22,
+    name: "Silver Anklet",
+    category: "Silver",
+    price: "₹12,000",
+    rating: "4.3",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Silver Essentials",
+    imageSrc: bp2,
+    hoverimageSrc:bph2,
+  },
+  {
+    id: 23,
+    name: "Silver Earrings",
+    category: "Silver",
+    price: "₹9,500",
+    rating: "4.2",
+    duration: "Trending",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Silver Earrings",
+    imageSrc: bp3,
+    hoverimageSrc:bph3,
+  },
+  {
+    id: 24,
+    name: "Silver Necklace",
+    category: "Silver",
+    price: "₹15,000",
+    rating: "4.5",
+    duration: "In Stock",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Silver Necklace",
+    imageSrc: bp4,
+    hoverimageSrc:bph4,
+  },
+  {
+    id: 25,
+    name: "Silver Kada Bracelet",
+    category: "Silver",
+    price: "₹13,000",
+    rating: "4.4",
+    duration: "In Stock",
+    isDiscount: true,
+    isAvailable: true,
+    location: "Silver Collection",
+    imageSrc: bp5,
+    hoverimageSrc:bph5,
+  },
+  {
+    id: 26,
+    name: "Silver Pendant Chain",
+    category: "Silver",
+    price: "₹10,500",
+    rating: "4.2",
+    duration: "Trending",
+    isDiscount: false,
+    isAvailable: true,
+    location: "Silver Pendant",
+    imageSrc: bp6,
+    hoverimageSrc:bph6,
+  },
+  // {
+  //   id: 27,
+  //   name: "Silver Toe Ring",
+  //   category: "Silver",
+  //   price: "₹6,200",
+  //   rating: "4.1",
+  //   duration: "In Stock",
+  //   isDiscount: false,
+  //   isAvailable: true,
+  //   location: "Silver Essentials",
+  //   imageSrc: bp7,
+  //   hoverimageSrc:bph7,
+  // },
+  // {
+  //   id: 28,
+  //   name: "Silver Kids Bracelet",
+  //   category: "Silver",
+  //   price: "₹7,800",
+  //   rating: "4.3",
+  //   duration: "In Stock",
+  //   isDiscount: false,
+  //   isAvailable: true,
+  //   location: "Kids Silver Collection",
+  //   imageSrc: bp8,
+  //   hoverimageSrc:bph8,
+  // },
+  // {
+  //   id: 29,
+  //   name: "Silver Floral Ring",
+  //   category: "Silver",
+  //   price: "₹11,200",
+  //   rating: "4.4",
+  //   duration: "Top Pick",
+  //   isDiscount: true,
+  //   isAvailable: true,
+  //   location: "Silver Collection",
+  //   imageSrc: bp9,
+  //   hoverimageSrc:bph9,
+  // },
+  // {
+  //   id: 30,
+  //   name: "Premium Silver Necklace Set",
+  //   category: "Silver",
+  //   price: "₹19,500",
+  //   rating: "4.6",
+  //   duration: "Premium",
+  //   isDiscount: true,
+  //   isAvailable: true,
+  //   location: "Premium Silver",
+  //   imageSrc: bp10,
+  //   hoverimageSrc:bph10,
+  // },
 ];
 
-
-// ---------------- EXTRA 12 PRODUCTS (19–30) ----------------
-const extraProducts = Array.from({ length: 12 }).map((_, i) => ({
-  id: 19 + i,
-  name: `Premium Ring ${i + 1}`,
-  category: i % 3 === 0 ? "Gold" : i % 3 === 1 ? "Diamond" : "Engagement",
-  price: `₹${45000 + i * 2500}`,
-  rating: (4.4 + Math.random() * 0.6).toFixed(1),
-  duration: "In Stock",
-  isDiscount: i % 2 === 0 ? "true" : "false",
-  isAvailable: "true",
-  location: "Tanishq Collection",
-
-  // Normal Image
-  imageSrc: extraImages[i],
-
-  // Auto Hover (_1 → _2)
-  hoverimageSrc: extraImages[i].replace("_1", "_2"),
-}));
-
-
-// ---------- FINAL EXPORT ----------
-export default [...NecklacesDetail, ...extraProducts];
+export default NecklacesDetail;

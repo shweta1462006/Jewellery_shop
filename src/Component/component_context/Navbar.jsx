@@ -3,74 +3,43 @@ import { NavLink } from "react-router-dom";
 import { useUser } from "../context/UserContext1";
 import Profile from "../component_context/Profile";
 import Top_Header from "./Top_Header";
+import { useCart } from "./CardContext";
 
 export default function Navbar() {
   const { user } = useUser();
-  const [isOpen, setIsOpen] = useState(false);
+  const { cart } = useCart();
+  const [showProfile, setShowProfile] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   return (
     <>
       <Top_Header />
 
       <nav className="h-16 w-full bg-white flex items-center justify-between px-6 shadow-md sticky top-0 z-50 relative">
-        
-        {/* Left Section - NO DROPDOWN */}
+
+        {/* Left Menu Items */}
         <div className="hidden md:flex items-center space-x-6">
-          <NavLink
-            to="/rings"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-            Rings
-          </NavLink>
-
-          <NavLink
-            to="/bangles"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-            Bangles
-          </NavLink>
-
-          <NavLink
-            to="/necklaces"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-            Necklaces
-          </NavLink>
-
-          <NavLink
-            to="/earrings"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-            Earrings
-          </NavLink>
+          {["rings", "bangles", "necklaces", "earrings"].map((item) => (
+            <NavLink
+              key={item}
+              to={`/${item}`}
+              className="text-gray-700 font-medium hover:text-amber-600 transition"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </NavLink>
+          ))}
         </div>
 
-        {/* Center Logo */}
-        <NavLink
-          to="/"
-          className="relative flex items-center space-x-2 group select-none"
-        >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-yellow-600 shadow-md group-hover:shadow-lg transition-all duration-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.6"
-              stroke="white"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 3l2.5 4.5L19 9l-3.5 4 1 5-4.5-2.5L7.5 18l1-5L5 9l4.5-1.5L12 3z"
-              />
-            </svg>
+        {/* Logo */}
+        <NavLink to="/" className="relative flex items-center space-x-2 group">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center shadow-md">
+            ⭐
           </div>
           <div className="flex flex-col leading-none">
-            <span className="text-2xl font-serif font-bold text-gray-800 tracking-wide group-hover:text-amber-600 transition-all duration-200">
+            <span className="text-2xl font-serif font-bold text-gray-800">
               Moksh’s
             </span>
-            <span className="text-[11px] uppercase tracking-[0.2em] text-gray-500 group-hover:text-gray-700 transition-all duration-300">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-gray-500">
               Fine Jewellery
             </span>
           </div>
@@ -78,44 +47,85 @@ export default function Navbar() {
 
         {/* Right Section */}
         <div className="hidden md:flex items-center space-x-6">
-          <NavLink
-            to="/Collection"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-         Collection
-          </NavLink>
 
-          <NavLink
-            to="/faqs"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-            FAQs
-          </NavLink>
+          {/* Collection, Wedding, Gift */}
+          {["Collection", "wedding", "gift"].map((item) => (
+            <NavLink
+              key={item}
+              to={`/${item}`}
+              className="text-gray-700 font-medium hover:text-amber-600 transition"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </NavLink>
+          ))}
 
-          <NavLink
-            to="/about"
-            className="text-gray-700 font-medium hover:text-amber-600 transition"
-          >
-            About
-          </NavLink>
+          {/* Cart Icon */}
+          <div className="relative">
+            <svg
+              onClick={() => setShowCart(!showCart)}
+              className="w-6 h-6 text-gray-700 hover:text-amber-600 transition cursor-pointer"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+            </svg>
 
-          {user ? (
-            <div className="flex items-center space-x-3 px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
-              <svg
-                className="w-5 h-5 text-gray-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="text-gray-800 text-sm">
-                Welcome, <span className="font-semibold">{user.un}</span>
+            {/* Badge Count */}
+            {cart.length > 0 && (
+              <span className="absolute -top-1 -right-2 bg-amber-600 text-white text-xs rounded-full px-1">
+                {cart.length}
               </span>
-              <Profile />
+            )}
+
+            {/* Cart Dropdown Preview */}
+            {showCart && cart.length > 0 && (
+              <div className="absolute right-0 top-10 bg-white border border-gray-200 rounded-lg shadow-xl w-72 p-4">
+                <h3 className="text-lg font-semibold mb-3">🛍 Your Cart</h3>
+                
+                {/* Cart Items Preview */}
+                <div className="max-h-60 overflow-y-auto">
+                  {cart.map((item, index) => (
+                    <div key={index} className="flex items-center mb-3 border-b pb-2">
+                      <img src={item.imageSrc} alt={item.name} className="w-12 h-12 rounded mr-3" />
+                      <div className="flex-1">
+                        <p className="text-sm font-medium">{item.name}</p>
+                        <p className="text-xs text-gray-500">{item.price}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* View Cart Button */}
+                <NavLink
+                  to="/Addtocard"
+                  className="block text-center bg-amber-600 text-white py-2 rounded-md hover:bg-amber-700 transition"
+                  onClick={() => setShowCart(false)}
+                >
+                  View Cart
+                </NavLink>
+              </div>
+            )}
+          </div>
+
+          {/* Profile Icon */}
+          {user ? (
+            <div className="relative">
+              <div
+                onClick={() => setShowProfile(!showProfile)}
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-amber-600 text-white font-bold uppercase cursor-pointer shadow-md"
+              >
+                {user.un ? user.un.charAt(0) : "U"}
+              </div>
+
+              {showProfile && (
+                <div className="absolute right-0 top-12 bg-white border rounded-lg shadow-lg p-4 w-40">
+                  <Profile />
+                </div>
+              )}
             </div>
           ) : (
             <NavLink
@@ -126,78 +136,7 @@ export default function Navbar() {
             </NavLink>
           )}
         </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            className="text-gray-700 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
       </nav>
-
-      {/* Mobile Menu Items */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg px-6 py-4 space-y-4">
-          <NavLink to="/rings" className="block text-gray-700 font-medium">
-            Rings
-          </NavLink>
-          <NavLink to="/bangles" className="block text-gray-700 font-medium">
-            Bangles
-          </NavLink>
-          <NavLink to="/necklaces" className="block text-gray-700 font-medium">
-            Necklaces
-          </NavLink>
-          <NavLink to="/earrings" className="block text-gray-700 font-medium">
-            Earrings
-          </NavLink>
-          <NavLink to="/Collection" className="block text-gray-700 font-medium">
-           Collection
-          </NavLink>
-          <NavLink to="/faqs" className="block text-gray-700 font-medium">
-            FAQs
-          </NavLink>
-          <NavLink to="/about" className="block text-gray-700 font-medium">
-            About
-          </NavLink>
-          <NavLink
-            to="/login"
-            className="block bg-amber-600 text-white text-center py-2 rounded-md"
-          >
-            Login
-          </NavLink>
-        </div>
-      )}
     </>
   );
 }

@@ -1,24 +1,25 @@
 import React, { useState } from "react";
-import EarringsDeatil from "./Earring.js";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import EarringsDetail from "./Earring.js";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import Row1 from "../../Repeated_file/Row1";
+import { useCart } from "../CardContext";
 
 export default function Earrings() {
   const [selectedCategory, setSelectedCategory] = useState("Gold");
-const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
-  const filteredRings = EarringsDeatil.filter(
+  const filteredItems = EarringsDetail.filter(
     (item) => item.category === selectedCategory
   );
 
   return (
     <div className="bg-white min-h-screen py-12 text-black">
-      
       {/* Category Tabs */}
       <div className="flex justify-center mb-12 flex-wrap gap-4">
-        {["Gold", "Diamond", "Engagement"].map((category) => (
+        {["Gold", "Diamond", "Silver"].map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
@@ -33,78 +34,95 @@ const navigate = useNavigate();
         ))}
       </div>
 
-      {/* Cards */}
+      {/* Cards Section */}
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-extrabold mb-10 text-center text-[#D97706]">
-          {selectedCategory} Rings
+          {selectedCategory} Earrings
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {filteredRings.map((product) => (
-            <div
-              key={product.id}
-              className="relative rounded-2xl shadow-lg bg-white border border-[#F4D38B]"
-            >
-              {/* Only Image Hover Effect */}
-              <Link to={`/ShowItem/${product.id}`}>
-                <div className="relative w-full h-64 overflow-hidden">
-                  {/* Normal Image */}
-                  <img
-                    src={product.imageSrc}
-                    alt={product.name}
-                    className="w-full h-full object-cover absolute inset-0 transition-opacity duration-300 opacity-100 hover:opacity-0"
-                  />
+          {filteredItems.map((product, index) => (
+            <React.Fragment key={product.id}>
+              {/* Card */}
+              <div className="relative rounded-2xl shadow-lg bg-white border border-[#F4D38B]">
+                {/* Image Hover */}
+                <Link to={`/ShowItem/${product.id}`}>
+                  <div className="relative w-full h-72 overflow-hidden">
+                    <img
+                      src={product.imageSrc}
+                      alt={product.name}
+                      className="w-full h-full object-cover absolute transition-opacity duration-300 opacity-100 hover:opacity-0"
+                    />
+                    <img
+                      src={product.hoverimageSrc}
+                      alt="hover"
+                      className="w-full h-full object-cover absolute transition-opacity duration-300 opacity-0 hover:opacity-100"
+                    />
+                  </div>
+                </Link>
 
-                  {/* Hover Image (corrected) */}
-                  <img
-                    src={product.hoverimageSrc}  
-                    alt="hover"
-                    className="w-full h-full object-cover absolute inset-0 transition-opacity duration-300 opacity-0 hover:opacity-100"
-                  />
+                {/* Badges */}
+                <div className="absolute top-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
+                  {product.duration}
                 </div>
-              </Link>
-
-              {/* Badges */}
-              <div className="absolute top-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
-                {product.duration}
-              </div>
-
-              <div className="absolute top-3 right-3 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-                ⭐ {product.rating}
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1 truncate">
-                  {product.name}
-                </h3>
-
-                <div className="flex items-center text-sm text-gray-600 mb-3">
-                  <FontAwesomeIcon icon={faLocationDot} className="text-red-500 mr-2" />
-                  <span>{product.location}</span>
+                <div className="absolute top-3 right-3 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
+                  ⭐ {product.rating}
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4">
-                  Beautifully crafted ring from Tanishq jewellery collection.
-                </p>
+                {/* Text Content */}
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold mb-1 truncate">
+                    {product.name}
+                  </h3>
 
-                <p
-                  className={`text-lg font-semibold ${
-                    product.isDiscount === "true" ? "text-red-600" : "text-amber-600"
-                  }`}
-                >
-                  {product.price}
-                </p>
+                  <div className="flex items-center text-sm text-gray-600 mb-3">
+                    <FontAwesomeIcon icon={faLocationDot} className="text-red-500 mr-2" />
+                    <span>{product.location}</span>
+                  </div>
 
-              <button
-  onClick={() => navigate(`/detail/${item.id}`)}
-  className="flex items-center bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-5 py-2.5 rounded-xl font-semibold hover:from-yellow-600 hover:to-amber-700 shadow-lg hover:shadow-amber-300/50 transform hover:scale-105 active:scale-95 transition-all"
->
-  Buy Now
-</button>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Elegant and beautiful earrings from Tanishq jewelry collection.
+                  </p>
 
+                  <p
+                    className={`text-lg font-semibold ${
+                      product.isDiscount ? "text-red-600" : "text-amber-600"
+                    }`}
+                  >
+                    {product.price}
+                  </p>
+
+                  {/* Add to Cart */}
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="mt-3 w-full rounded-lg py-2 text-sm font-bold border border-[#D97706] text-[#D97706] hover:bg-[#D97706] hover:text-white transition-all"
+                  >
+                    Add to Cart 🛒
+                  </button>
+
+                  {/* Buy Now / Out of Stock using ternary */}
+                  <button
+                    onClick={() =>
+                      product.isAvailable ? navigate(`/useparams/${product.id}`) : null
+                    }
+                    className={`mt-3 w-full rounded-lg py-3 text-sm font-bold transition-all ${
+                      product.isAvailable
+                        ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-white"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
+                  >
+                    {product.isAvailable ? "Buy Now" : "Out of Stock"}
+                  </button>
+                </div>
               </div>
-            </div>
+
+              {/* Extra Section */}
+              {index === 5 && (
+                <div className="col-span-3 mt-10">
+                  <Row1 />
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>
