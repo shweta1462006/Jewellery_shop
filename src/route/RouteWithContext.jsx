@@ -23,9 +23,11 @@ import GCoins_page from "../Component/component_context/GCoins_page.jsx";
 import GCoins from "../Component/component_context/GCoins.jsx";
 import Footer from "../Component/component_context/Footer.jsx";
 import CardPage from "../Component/component_context/CardPage.jsx";
+import Practice from "../Component/component_context/Practice.jsx";
 
 import { CartProvider } from "../Component/component_context/CardContext";
 import AddToCard from "../Component/component_context/AddToCard.jsx";
+import Row1Neck from "../Component/Repeated_file/Row1Neck.jsx";
 
 
 
@@ -56,6 +58,10 @@ export default function RouteWithContext() {
             <Route path="/card" element={<CardPage />} />
             <Route path="/Addtocard" element={<AddToCard />} />
             <Route path="/useparams/:id" element={<Useparams />} />
+            <Route path="/practice" element={<Practice />} />
+            <Route path="/rneck1" element={<Row1Neck />} />
+
+
 
 
 

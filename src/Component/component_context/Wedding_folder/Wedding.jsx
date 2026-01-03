@@ -46,10 +46,7 @@ export default function Wedding() {
         
         {/* Top Heading */}
         <div className="bg-white p-5 rounded-xl shadow-md flex items-center gap-3 mb-8">
-          <i className="fa-solid fa-gem text-[30px] text-[#d9a441]"></i>
-          <p className="text-[20px] m-0">
-            The <b>TATA</b> Product
-          </p>
+          <div className="gr"></div>
         </div>
 
         {/* Grid */}
